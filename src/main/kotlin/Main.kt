@@ -2,7 +2,7 @@ package ru.netology
 
 fun main() {
     //проверка
-    for (i in -60 .. 24 * 60 * 60 * 3 + 1000 step 500){
+    for (i in -60..24 * 60 * 60 * 3 + 1000 step 500) {
         agoToText(i)
     }
 
@@ -10,8 +10,8 @@ fun main() {
 
 fun agoToText(ago: Int) {
     val time: Int = when {
-        ago in 0..3600 -> ago/60
-        ago > 3600 -> ago/3600
+        ago in 0..3600 -> ago / 60
+        ago > 3600 -> ago / 3600
         else -> ago
     }
 
@@ -33,11 +33,11 @@ fun minutesForm(minutes: Int): String {
 
     val lastDigit: Int = minutes % 10 //последняя цифра
 
-   return when {
+    return when {
 
         minutes in 11..14 -> "минут"
         lastDigit == 1 -> "минуту"
-        lastDigit in 2 .. 4 -> "минуты"
+        lastDigit in 2..4 -> "минуты"
 
         else -> "минут"
     }
@@ -45,6 +45,6 @@ fun minutesForm(minutes: Int): String {
 
 fun hoursForm(hours: Int): String = when (hours) {
     1, 21 -> "час"
-    in 2 ..4, in 22..24 -> "часа"
+    in 2..4, in 22..24 -> "часа"
     else -> "часов"
 }
